@@ -1,5 +1,5 @@
-package Controller;
-import Model.User;
+package mvc.example.demo.Controller;
+import mvc.example.demo.entity.User;
 
 public class test {
     public static void main(String[] args) {

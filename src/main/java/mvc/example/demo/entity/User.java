@@ -1,11 +1,15 @@
-package Model;
+package mvc.example.demo.entity;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Setter // id, name, email 에 대한 getter, setter 사용?
+@Setter // id, name, email 에 대한 getter, setter 사용? -> 데이터 무결성에 관한 문제로 setter는 사용하지 않는게 좋다.
 @Getter
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 public class User {
     // Getter/Setter
@@ -24,13 +28,13 @@ public class User {
     @Column(unique = true)
     private String email;
 
-    // 생성자
-    public User() {}
-
-    public User(Long id, String username, String email) {
-        this.id = id;
-        this.username = username;
-        this.email = email;
-    }
+//    // 생성자
+//    public User() {}
+//
+//    public User(Long id, String username, String email) {
+//        this.id = id;
+//        this.username = username;
+//        this.email = email;
+//    }
 
 }
