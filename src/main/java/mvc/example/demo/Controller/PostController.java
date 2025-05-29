@@ -1,5 +1,6 @@
 package mvc.example.demo.Controller;
 
+import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import mvc.example.demo.entity.Post;
 import mvc.example.demo.service.PostService;
@@ -18,14 +19,14 @@ public class PostController {
     }
 
     // 요청값 받기용 내부 DTO
+    @Getter
     public static class PostCreateRequest {
+        // Getter/Setter 필수 (JSON 바인딩 위해)
         private String title;
         private String content;
 
-        // Getter/Setter 필수 (JSON 바인딩 위해)
-        public String getTitle() { return title; }
         public void setTitle(String title) { this.title = title; }
-        public String getContent() { return content; }
+
         public void setContent(String content) { this.content = content; }
     }
 }
